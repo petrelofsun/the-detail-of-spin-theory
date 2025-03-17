@@ -1,0 +1,133 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{bbm}
+\usepackage{cases}
+
+\title{\textbf{Lorentz Boost of Spin Vector}}
+\author{Lingyang Kong}
+\date{}
+
+\begin{document}
+\maketitle
+\par Arbitrary direction Lorentz boost of the exponential form of the generating elements,
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})=exp(-iy\hat{\boldsymbol{p}}\cdot\boldsymbol{K})
+\end{equation}
+\par In which $y$ is rapidity of moumentum direction And $\hat{\boldsymbol{p}}=(sin\theta cos\phi, sin\theta sin\phi, cos\theta)$.
+\par For left-handed Weyl spinor, $K_{i}=i\sigma_{i}/2$, 
+\begin{equation}
+    \begin{split}
+            \Lambda(y\hat{\boldsymbol{p}})_{L}
+            &=\sum_{n}{\frac{1}{n!}(\frac{y\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma}}{2})^n}\\
+            &=\sum_{m}{\frac{1}{(2m)!}(\frac{y}{2})^{2m}(\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma})^{2m}}
+            +\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma}\sum_{m}{\frac{1}{(2m+1)!}(\frac{y}{2})^{2m+1}(\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma})^{2m}}\\
+    \end{split}
+\end{equation}
+\par We know that $(\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma})^2=1$. And $cosh(x)=\sum{\frac{1}{(2m)!}x^{2m}}$, $sinh(x)=\sum{\frac{1}{(2m+1)!}x^{2m+1}}$ according to Taylor expansion. We can get,
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{L}=cosh(\frac{y}{2})+sinh(\frac{y}{2})\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma}
+\end{equation}
+\par For right-handed Weyl spinor, $K_{i}=-i\sigma_{i}/2$. similarly,
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{R}=cosh(\frac{y}{2})-sinh(\frac{y}{2})\hat{\boldsymbol{p}}\cdot \boldsymbol{\sigma}
+\end{equation}
+\par In which $y=ln\frac{E+p}{m}$, substitute into Eq.(3)(4), we can get
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{L}=\sqrt{\frac{E+m}{2m}}+\sqrt{\frac{1}{2m(E+m)}}\boldsymbol{p}\cdot\boldsymbol{\sigma}
+\end{equation}
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{R}=\sqrt{\frac{E+m}{2m}}-\sqrt{\frac{1}{2m(E+m)}}\boldsymbol{p}\cdot\boldsymbol{\sigma}
+\end{equation}
+\par And we can get,
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{L}\cdot \Lambda(y\hat{\boldsymbol{p}})_{R}=\Lambda(y\hat{\boldsymbol{p}})_{R}\cdot\Lambda(y\hat{\boldsymbol{p}})_{L}=\mathbbm{1}
+\end{equation}
+\par i.e.
+\begin{equation}
+       \Lambda(y\hat{\boldsymbol{p}})_{L}^{-1}=\Lambda(y\hat{\boldsymbol{p}})_{R}\\
+\end{equation}
+\par Because $\sigma^{\dag}_{i}=\sigma_{i}$,
+\begin{equation}
+    \Lambda(y\hat{\boldsymbol{p}})_{L}^{\dag}=\Lambda(y\hat{\boldsymbol{p}})_{L}
+\end{equation}
+\par For Dirac spinor $\psi=\begin{pmatrix}
+    \psi_{L}\\
+    \psi_{R}
+\end{pmatrix}$, Lorentz boost matrix,
+\begin{equation}
+     \Lambda(y\hat{\boldsymbol{p}})=\begin{pmatrix}
+          \Lambda_{L} & 0\\
+          0 & \Lambda_{R}
+     \end{pmatrix}
+\end{equation}
+\par And,
+\begin{equation}
+     \Lambda(y\hat{\boldsymbol{p}})^{\dag}=\begin{pmatrix}
+          \Lambda_{L} & 0\\
+          0 & \Lambda_{R}
+     \end{pmatrix}
+\end{equation}
+\par For $s^{*\mu}\gamma_{\mu}$, in which $s^{*\mu}=s(0,\vec{n})$ is spin vector in rest frame, perfrom a Lorentz boost, we can get,
+\begin{equation}
+        s^{*\mu}\gamma_{\mu} 
+        \to \Lambda(y\hat{\boldsymbol{p}})s^{*\mu}\gamma_{\mu}\gamma_{0}\Lambda(y\hat{\boldsymbol{p}})^{\dag}\gamma_{0}=s^{*\mu}\Lambda(y\hat{\boldsymbol{p}})\gamma_{\mu}\gamma_{0}\Lambda(y\hat{\boldsymbol{p}})^{\dag}\gamma_{0}
+\end{equation}
+\par Assume $s^{\mu}\gamma_{\mu}=s^{*\mu}\Lambda(y\hat{\boldsymbol{p}})\gamma_{\mu}\gamma_{0}\Lambda(y\hat{\boldsymbol{p}})\gamma_{0}$, in which $s^{\mu}=s(s^{0},\vec{s})$ $\gamma^{\mu}$ takes the Weyl representation, we can get,
+\begin{equation}
+\begin{split}
+s^{\mu}\gamma_{\mu}
+&=s^{*\mu}\Lambda(y\hat{\boldsymbol{p}})\gamma_{\mu}\Lambda(y\hat{\boldsymbol{p}})\\
+&=s^{*\mu}
+\begin{pmatrix}
+\Lambda_{L} & 0\\
+0 & \Lambda_{R}
+\end{pmatrix}
+\begin{pmatrix}
+    0 & \sigma_{\mu}\\
+    \bar{\sigma}_{\mu} & 0
+\end{pmatrix}
+\begin{pmatrix}
+\Lambda_{R} & 0\\
+0 & \Lambda_{L}
+\end{pmatrix}\\
+&=s^{*\mu}
+\begin{pmatrix}
+    0 & \Lambda_{L}\sigma_{\mu}\Lambda_{L}\\
+    \Lambda_{R}\bar{\sigma}_{\mu}\Lambda_{R} & 0
+\end{pmatrix}
+\end{split}
+\end{equation}
+\par i.e.
+\begin{numcases}{}
+    s^{\mu}\sigma_{\mu}=s^{*\mu}\Lambda_{L}\sigma_{\mu}\Lambda_{L}\\
+    s^{\mu}\bar{\sigma}_{\mu}=s^{*\mu}\Lambda_{R}\bar{\sigma}_{\mu}\Lambda_{R}
+\end{numcases}
+\par Expanding the equations,
+\begin{gather}
+        s^{0}-\boldsymbol{s}\cdot\boldsymbol{\sigma}=-s\frac{E+m}{2m}(\boldsymbol{n}\cdot\boldsymbol{\sigma})-s\frac{1}{2m}\left\{(\boldsymbol{p}\cdot\boldsymbol{\sigma}),(\boldsymbol{n}\cdot\boldsymbol{\sigma})\right\}-s\frac{1}{2m(E+m)}(\boldsymbol{p}\cdot\boldsymbol{\sigma})(\boldsymbol{n}\cdot\boldsymbol{\sigma})(\boldsymbol{p}\cdot\boldsymbol{\sigma})\\
+        s^{0}+\boldsymbol{s}\cdot\boldsymbol{\sigma}=s\frac{E+m}{2m}(\boldsymbol{n}\cdot\boldsymbol{\sigma})-s\frac{1}{2m}\left\{(\boldsymbol{p}\cdot\boldsymbol{\sigma}),(\boldsymbol{n}\cdot\boldsymbol{\sigma})\right\}+s\frac{1}{2m(E+m)}(\boldsymbol{p}\cdot\boldsymbol{\sigma})(\boldsymbol{n}\cdot\boldsymbol{\sigma})(\boldsymbol{p}\cdot\boldsymbol{\sigma})
+\end{gather}
+\par We know that $(\boldsymbol{a}\cdot\boldsymbol{\sigma})(\boldsymbol{b}\cdot\boldsymbol{\sigma})=(\boldsymbol{a}\cdot\boldsymbol{b})\mathbbm{1}+i(\boldsymbol{a}\times\boldsymbol{b})\cdot\boldsymbol{\sigma}$, 
+\begin{gather}
+    \left\{(\boldsymbol{p}\cdot\boldsymbol{\sigma}),(\boldsymbol{n}\cdot\boldsymbol{\sigma})\right\}=2(\boldsymbol{p}\cdot\boldsymbol{n})\mathbbm{1} \\
+    (\boldsymbol{p}\cdot\boldsymbol{\sigma})(\boldsymbol{n}\cdot\boldsymbol{\sigma})(\boldsymbol{p}\cdot\boldsymbol{\sigma})=2(\boldsymbol{p}\cdot\boldsymbol{n})(\boldsymbol{p}\cdot\boldsymbol{\sigma})-\left|\boldsymbol{p}\right|^2(\boldsymbol{n}\cdot\boldsymbol{\sigma})
+\end{gather}
+\par Substitute in Eq.(16)(17), we can get, 
+\begin{equation}
+     s^{0}-\boldsymbol{s}\cdot\boldsymbol{\sigma}=-s\frac{\boldsymbol{p}\cdot\boldsymbol{n}}{m}-s[\boldsymbol{n}+\frac{1}{m(E+m)}(\boldsymbol{p}\cdot\boldsymbol{n})\boldsymbol{p}]\cdot\boldsymbol{\sigma}
+\end{equation}
+\par Finally, we conclude that the spin vector after Lorentz boost transformation, 
+\begin{equation}
+    s^{\mu}=s(-\frac{\boldsymbol{p}\cdot\boldsymbol{n}}{m},\boldsymbol{n}+\frac{1}{m(E+m)}(\boldsymbol{p}\cdot\boldsymbol{n})\boldsymbol{p} \ )
+\end{equation}
+\end{document}
